@@ -1,0 +1,559 @@
+{
+  "info": {
+    "_postman_id": "f31ee52a-084b-456e-807f-dcf9b7aed571",
+    "name": "Termin",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "46840859",
+    "_collection_link": "https://red-water-3951189.postman.co/workspace/%25D0%25A8%25D0%25BE%25D1%2585%25D0%25B6%25D0%25B0%25D1%2585%25D0%25BE%25D0%25BD-%25D0%2597%25D0%25BE%25D1%2585%25D0%25B8%25D1%2580%25D0%25BE%25D0%25B2's-Workspace~ab66bf4c-488a-42a3-8ca5-2ae5653f2264/collection/46840859-f31ee52a-084b-456e-807f-dcf9b7aed571?action=share&source=collection_link&creator=46840859"
+  },
+  "item": [
+    {
+      "name": "Author",
+      "item": [
+        {
+          "name": "Get",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJ1bWFyeG9uQGV4YW1wbGUuY29tIiwiaXNfYWN0aXZlIjp0cnVlLCJpYXQiOjE3NTcwNDkwMDYsImV4cCI6MTc1NzEwMzAwNn0.IRNGI2jvJdQ_FA4hTw0VuvqO8rl-RwKS7Cd6gO9I7Cg",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/author",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "author"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get one",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJzaG94amF4b25AZXhhbXBsZS5jb20iLCJpc19hY3RpdmUiOnRydWUsImlhdCI6MTc1NzIzMTI3NCwiZXhwIjoxNzU3Mjg1Mjc0fQ.AoIiL2V1Yu7X7Z4vODvv6G347IDmg-mdWo9UbB30m2Q",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/author/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "author", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Post",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"first_name\": \"Shoxjaxon\",\r\n  \"last_name\": \"Zoxirov\",\r\n  \"nick_name\": \"syntax02\",\r\n  \"email\": \"shoxjaxon@example.com\",\r\n  \"phone_number\": \"+67676767456\",\r\n  \"password\": \"555555\",\r\n  \"info\": \"Avtorr\",\r\n  \"position\": \"Main avtor\",\r\n  \"is_expert\": true,\r\n  \"is_active\": true\r\n}   \r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/author",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "author"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJzaG94amF4b25AZXhhbXBsZS5jb20iLCJpc19hY3RpdmUiOnRydWUsImlhdCI6MTc1NzIzMTI3NCwiZXhwIjoxNzU3Mjg1Mjc0fQ.AoIiL2V1Yu7X7Z4vODvv6G347IDmg-mdWo9UbB30m2Q",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"first_name\": \"Shoxjaxon\",\r\n  \"last_name\": \"Zoxirov\",\r\n  \"nick_name\": \"syntax02\",\r\n  \"email\": \"shoxjaxon@example.com\",\r\n  \"phone_number\": \"+67676767456\",\r\n  \"password\": \"555555\",\r\n  \"info\": \"Avtorr\",\r\n  \"position\": \"Maingggggg avtor\",\r\n  \"is_expert\": true,\r\n  \"is_active\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/author/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "author", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/admin/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "admin", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Social",
+      "item": [
+        {
+          "name": "Get one",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/social/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "social", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "post",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"telegram\",\r\n    \"icon\":\"tgtgt\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/social",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "social"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"instagram\",\r\n    \"icon\":\"instaaa\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/social/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "social", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "del",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/social/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "social", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Author_social",
+      "item": [
+        {
+          "name": "get",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJ1bWFyeG9uQGV4YW1wbGUuY29tIiwiaXNfYWN0aXZlIjp0cnVlLCJpYXQiOjE3NTcwNDkwMDYsImV4cCI6MTc1NzEwMzAwNn0.IRNGI2jvJdQ_FA4hTw0VuvqO8rl-RwKS7Cd6gO9I7Cg",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/author_social",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "author_social"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "post",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"social_link\":\"dffdg\",\r\n\"authorId\":1,\r\n\"socialId\":2\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/author_social",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "author_social"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"social_link\":\"updateddd link\",\r\n\"authorId\":1,\r\n\"socialId\":2\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/author_social/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "author_social", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "del",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"social_link\":\"http//:linka\",\r\n\"authorId\":1,\r\n\"socialId\":2\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/author_social/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "author_social", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\":\"shoxjaxon@example.com\",\r\n    \"password\":\"555555\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/auth/login",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "auth", "login"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "logout",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\":\"botivsadfaddr@mail.uz\",\r\n    \"password\":\"123456\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/auth/logout",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "auth", "logout"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "refreshToken",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\":\"botivsadfaddr@mail.uz\",\r\n    \"password\":\"123456\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/auth/refresh",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "auth", "refresh"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Topic",
+      "item": [
+        {
+          "name": "get",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"full_name\":\"Botir Sodqov2\",\r\n    \"phone_number\":\"+998901034567\",\r\n    \"email\":\"botir1@gmail.com\",\r\n    \"address\":\"Yoshkent\",\r\n    \"location\":\"1234.3143\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/topic",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "topic"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Dictionary",
+      "item": [
+        {
+          "name": "Get",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/dictionary",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "dictionary"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Category",
+      "item": [
+        {
+          "name": "Get",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/category",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "category"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Description",
+      "item": [
+        {
+          "name": "Get",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "httFp://localhost:3000/api/description",
+              "protocol": "httFp",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "description"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/description/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "description", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Synonym",
+      "item": [
+        {
+          "name": "Get",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/synonym",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "synonym"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "post",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"dictionaryId\":1,\r\n    \"descriptionId\":1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/synonym",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "synonym"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
