@@ -2,20 +2,20 @@ const bcrypt = require("bcrypt");
 const { sendErrorResponse } = require("../helpers/sendErrorResponse.js");
 const jwtService = require("../services/jwt.service.js");
 const config = require("config");
-const { Author } = require("../models/Author.js");
+const { Admin } = require("../models/admin.js");
 
 const login = async (req, res) => {
   try {
     const { email, password } = req.body;
-    const author = await Author.findOne({ where: { email: email } });
-    if (!author) {
+    const admin = await Admin.findOne({ where: { email: email } });
+    if (!admin) {
       return sendErrorResponse(
         { message: "Email yoki password noto'gri" },
         res,
         401
       );
     }
-    const verifyPassword = await bcrypt.compare(password, author.password);
+    const verifyPassword = await bcrypt.compare(password, admin.password);
     if (!verifyPassword) {
       return sendErrorResponse(
         { message: "Email yoki password noto'gri" },
@@ -24,23 +24,23 @@ const login = async (req, res) => {
       );
     }
     const payload = {
-      id: author.id,
-      email: author.email,
-      is_active: author.is_active,
-      is_creator: author.is_creator,
+      id: admin.id,
+      email: admin.email,
+      is_active: admin.is_active,
+      is_creator: admin.is_creator,
     };
     const tokens = jwtService.generateTokens(payload);
 
     const hashedRefreshToken = await bcrypt.hash(tokens.refreshToken, 7);
-    author.refreshToken = hashedRefreshToken;
-    await author.save();
+    admin.refreshToken = hashedRefreshToken;
+    await admin.save();
     res.cookie("refreshToken", tokens.refreshToken, {
       maxAge: config.get("cookie_refresh_token_time"),
       httpOnly: true,
     });
 
     res.status(200).send({
-      message: "author logged in",
+      message: "admin logged in",
       accessToken: tokens.accessToken,
     });
   } catch (error) {
@@ -58,12 +58,13 @@ const logout = async (req, res) => {
     const verifiedRefreshToken = await jwtService.verifyRefreshToken(
       refreshToken
     );
-    const author = await Author.findByPk(verifiedRefreshToken.id);
-    (author.refreshToken = null), await author.save();
+    const admin = await Admin.findByPk(verifiedRefreshToken.id);
+    admin.refreshToken = null;
+    await admin.save();
 
     res.clearCookie("refreshToken");
     res.send({
-      message: "author logged out",
+      message: "admin logged out",
     });
   } catch (error) {
     sendErrorResponse(error, res, 500);
@@ -78,10 +79,10 @@ const refreshAccessToken = async (req, res) => {
     const verifiedRefreshToken = await jwtService.verifyRefreshToken(
       refreshToken
     );
-    const author = await Author.findByPk(verifiedRefreshToken.id);
+    const admin = await Admin.findByPk(verifiedRefreshToken.id);
     const compareRefreshToken = await bcrypt.compare(
       refreshToken,
-      author.refreshToken
+      admin.refreshToken
     );
 
     if (!compareRefreshToken) {
@@ -93,24 +94,24 @@ const refreshAccessToken = async (req, res) => {
     }
 
     const payload = {
-      id: author.id,
-      email: author.email,
-      is_active: author.is_active,
-      is_creator: author.is_creator,
-      role: "author",
+      id: admin.id,
+      email: admin.email,
+      is_active: admin.is_active,
+      is_creator: admin.is_creator,
+      role: "admin",
     };
     const tokens = jwtService.generateTokens(payload);
 
     const hashedRefreshToken = await bcrypt.hash(tokens.refreshToken, 7);
-    author.refreshToken = hashedRefreshToken;
-    await author.save();
+    admin.refreshToken = hashedRefreshToken;
+    await admin.save();
     res.cookie("refreshToken", tokens.refreshToken, {
       maxAge: config.get("cookie_refresh_token_time"),
       httpOnly: true,
     });
 
     res.status(200).send({
-      message: "author logged in",
+      message: "admin logged in",
       accessToken: tokens.accessToken,
     });
   } catch (error) {
